@@ -9,6 +9,7 @@ The dataset for this analysis was sourced from Kaggle, which provides a comprehe
 
 ## Tools Used
 **PostgreSQL:** An advanced open-source relational database was utilized for data ingestion, storage, and complex analysis queries.
+**Power BI and Tableau:** For Data visualization.
 
 ## Key Performance Indicators (KPIs)
 * Total Revenue: The sum of all sales transactions.
