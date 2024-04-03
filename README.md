@@ -8,8 +8,8 @@ This documentation outlines the high-level details of the “European Sales Perf
 The dataset for this analysis was sourced from Kaggle, which provides a comprehensive collection of sales data, including transactional records, customer demographics, and product details.
 
 ## Tools Used
-**PostgreSQL:** An advanced open-source relational database was utilized for data ingestion, storage, and complex analysis queries.
-**Power BI and Tableau:** For Data visualization.
+- **PostgreSQL:** An advanced open-source relational database was utilized for data ingestion, storage, and complex analysis queries.
+- **Power BI and Tableau:** For Data visualization.
 
 ## Key Performance Indicators (KPIs)
 * Total Revenue: The sum of all sales transactions.
