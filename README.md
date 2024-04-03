@@ -20,6 +20,34 @@ The dataset for this analysis was sourced from Kaggle, which provides a comprehe
 ## Objectives
 This analysis can be used by the sales and marketing teams to strategize and optimize their efforts based on the performance metrics and trends identified.
 
+## Data Analyis
+Example of SQL Code for Month-Over-month Profit Growth:
+
+```
+  WITH mom_profit_growth AS (
+  	SELECT
+  		EXTRACT(YEAR FROM order_date) AS year,
+  		EXTRACT(MONTH FROM order_date) AS month,
+  		SUM(total_profit) AS profit
+  	FROM europeansales
+  	GROUP BY 1,2
+  )
+  SELECT
+  	year as Current_year,
+  	month as Current_month,
+  	profit as profit_cm,
+  	LAG(year,12) OVER (ORDER BY year, month) as Previuos_year,
+  	LAG(month, 12) OVER (ORDER BY year, month) as Compared_Month_LY,
+  	LAG(profit, 12) OVER (ORDER BY year, month) as LY_monthly_profit,
+  	profit - LAG(profit, 12) OVER (ORDER BY year, month) as MOM_Diff,
+  	round(
+  		(profit - LAG(profit, 12) OVER (ORDER BY year, month))/
+  		   LAG(profit, 12) OVER (ORDER BY year, month),2
+  	)*100 as mom_pct_change
+  FROM mom_profit_growth
+  ORDER BY 1,2;
+```
+
 ## Conclusion
 The “European Sales Performance Analysis” project leverages robust data analysis techniques to provide a clear picture of the company’s sales performance, enabling data-driven decision-making for future strategies.
 
